@@ -36,6 +36,6 @@ Suppose you created and wrapped the STIX objects of your incident into the file 
 
 To visualize the incident, just use [Oasis' CTI STIX Visualizer](https://oasis-open.github.io/cti-stix-visualization/) this way:
 
-https://oasis-open.github.io/cti-stix-visualization/?url=https://raw.githubusercontent.com/bentobox19/menpo-prime/main/stix-db/22.09.01.kyberswap.json
+https://oasis-open.github.io/cti-stix-visualization/?url=https://raw.githubusercontent.com/bentobox19/menpo-bravo/main/stix-db/22.09.01.kyberswap.json
 
 <img width="888" alt="Visualization 00" src="https://user-images.githubusercontent.com/85324266/232174604-41c2ba3b-57dd-4c10-975d-5845b7dbf5ef.png">
