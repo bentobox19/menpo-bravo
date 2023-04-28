@@ -63,8 +63,8 @@ class XDefiAddress():
 ################################################################################
 
 # python3 -c "from datetime import datetime; print(datetime.utcnow().replace(microsecond=0).isoformat() + 'Z')"
-created_date = "2023-04-19T00:00:00Z"
-modified_date = "2023-04-19T00:00:00Z"
+created_date = "2023-04-28T16:47:36Z"
+modified_date = "2023-04-28T16:47:36Z"
 
 ################################################################################
 ##
@@ -76,8 +76,9 @@ modified_date = "2023-04-19T00:00:00Z"
 attacker = ThreatActor(
     created=created_date,
     modified=modified_date,
-    name="",
-    description=""
+    name="Transit Finance Attacker",
+    description="On October 1, 2022 Transit Finance users were targeted\
+        using a function parameter injection bug in the DEX’s contract."
 )
 
 attacker_indicator = {}
@@ -85,11 +86,12 @@ attacker_indicator = {}
 attacker_indicator["00"] = Indicator(
     created=created_date,
     modified=modified_date,
-    valid_from=created_date, # In the future, should be valid from at least the timestamp of the attack
-    name="", # For example, the address value
-    description="",
+    valid_from=created_date,
+    name="0x75f2aba6a44580d7be2c4e42885d4a1917bffd46",
+    description="Transit Finance Attacker Address",
     pattern_type="stix",
-    pattern="[x-defi-address:value = '0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef' AND x-defi-address:blockchain = 'abc']" # Example
+    pattern="[x-defi-address:value = '0x75f2aba6a44580d7be2c4e42885d4a1917bffd46' \
+        AND (x-defi-address:blockchain = 'ethereum' OR x-defi-address:blockchain = 'bsc')]"
 )
 
 relationship_attacker_indicator = {}
@@ -114,10 +116,10 @@ for i in range(0, 1):
 attack_pattern = AttackPattern(
     created=created_date,
     modified=modified_date,
-    name="",
-    x_defi_taxonomy_layer="AUX", # Example
-    x_defi_taxonomy_incident_cause="",
-    x_defi_taxonomy_incident_type="",
+    name="Function parameter injection bug",
+    x_defi_taxonomy_layer="SC",
+    x_defi_taxonomy_incident_cause="Coding mistake",
+    x_defi_taxonomy_incident_type="Absence of coding logic or sanity check",
     extensions={
         "extension-definition--59cde1e5-2ce1-4732-a09d-596f401ba65b" : {
             'extension_type': 'toplevel-property-extension',
@@ -145,15 +147,15 @@ relationship_threat_actor_attack_pattern = Relationship(
 victim_identity = Identity(
     created=created_date,
     modified=modified_date,
-    name="",
-    description="",
+    name="Transit Finance",
+    description="Multi-chain DEX Aggregator",
     identity_class="organization", # Example
     sectors=["financial-services"], # Example
     external_references=[
         ExternalReference(
-            source_name="",
-            url=""
-        )
+            source_name="Transit Finance",
+            url="https://www.transit.finance/en/"
+        ),
     ]
 )
 
@@ -162,10 +164,10 @@ victim_address = {}
 victim_address["00"] = XDefiAddress(
     created=created_date,
     modified=modified_date,
-    name="", # Use the address as name
-    description="",
-    blockchain="", # Not an enum
-    value="",
+    name="0xed1afc8c4604958c2f38a3408fa63b32e737c428",
+    description="Vulnerable contract in ethereum and BSC",
+    blockchain="ethereum, bsc", # Maybe in the future we need a list here
+    value="0xed1afc8c4604958c2f38a3408fa63b32e737c428",
 )
 
 relationship_victim = {}
@@ -217,27 +219,54 @@ relationship_attacker_victim = Relationship(
 incident_report = Report(
     created=created_date,
     modified=modified_date,
-    name="",
-    description=(
-        "" # Description will generally have several lines
-    ),
-    published="2022-09-01T00:00:00Z", # Example
-    report_types=["threat-actor", "attack-pattern"], # May vary based on what you have
+    name="Transit Finance 22.10.01",
+    description="On October 1, 2022 Transit Finance users were targeted\
+        using a function parameter injection bug in the DEX’s contract.",
+    published="2022-10-01T00:00:00Z",
+    report_types=["threat-actor", "attack-pattern"],
     object_refs=[
         attacker,
         victim_identity,
     ],
     external_references=[
         ExternalReference(
-            source_name="",
-            url=""
+            source_name="GitHub",
+            url="https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/TransitSwap_exp.sol"
         ),
         ExternalReference(
-            source_name="",
-            url=""
+            source_name="Medium",
+            url="https://medium.com/@TransitSwap/updates-about-transitfinance-4731c38d6910"
+        ),
+        ExternalReference(
+            source_name="Rekt News",
+            url="https://rekt.news/transit-swap-rekt/"
+        ),
+        ExternalReference(
+            source_name="Medium",
+            url="https://slowmist.medium.com/cross-chain-dex-aggregator-transit-swap-hacked-analysis-74ba39c22020"
+        ),
+        ExternalReference(
+            source_name="Twitter",
+            url="https://twitter.com/1nf0s3cpt/status/1576511552592543745"
+        ),
+        ExternalReference(
+            source_name="Twitter",
+            url="https://twitter.com/peckshield/status/1576419241414524929"
+        ),
+        ExternalReference(
+            source_name="Twitter",
+            url="https://twitter.com/SlowMist_Team/status/1576488479357214721"
+        ),
+        ExternalReference(
+            source_name="Twitter",
+            url="https://twitter.com/supremacy_ca/status/1576332076277993475"
+        ),
+        ExternalReference(
+            source_name="Twitter",
+            url="https://twitter.com/TransitFinance/status/1576463550557483008"
         ),
     ],
-    x_defi_estimated_loss_usd=0,
+    x_defi_estimated_loss_usd=28900000,
     extensions={
         "extension-definition--393acb6c-fe64-42b5-92d5-a8ec243c4876" : {
             'extension_type': 'toplevel-property-extension',
@@ -255,25 +284,30 @@ incident_report = Report(
 ##
 ################################################################################
 
-incident_logs = [
-    {
-        "timestamp": "",
-        "event": ""
-    }
-]
-
-incident_note_objects = [
-    Note(
-        created=created_date,
-        modified=modified_date,
-        content=f"{log['timestamp']} - {log['event']}",
-        object_refs=incident_report.id,
-    )
-    for log in incident_logs
-]
-
 comments = [
-    "",
+    "$28.9M were lost according to Transit Finance.\
+        However, $18.9M were promptly returned after the discovery\
+        of attacker’s multiple transactions with centralized exchanges.\
+        One of the attacker’s transactions was also front-run for $1M by an MEV bot.",
+    "Though the vulnerability was in the project’s code, this attack targeted\
+        the users directly via a vulnerability in the use of the transferFrom()\
+        function. Any tokens approved for trading on Transit Swap could be\
+        transferred directly from users’ wallets to the unknown exploiter’s address.",
+    "Root cause of this attack: a controllable `transferFrom()` external call",
+    "20221002 Transit Swap - Incorrect owner address validation\n\
+        Testing\n\
+        \n\
+        forge test --contracts src/test/TransitSwap_exp.sol -vv\n\
+        \n\
+        Contract\n\
+        https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/TransitSwap_exp.sol\n\
+        \n\
+        Link reference\n\
+        https://twitter.com/TransitFinance/status/1576463550557483008\n\
+        \n\
+        https://twitter.com/1nf0s3cpt/status/1576511552592543745\n\
+        \n\
+        https://bscscan.com/tx/0x181a7882aac0eab1036eedba25bc95a16e10f61b5df2e99d240a16c334b9b189\n",
 ]
 
 incident_note_objects_comments = [
@@ -300,7 +334,10 @@ BundleofAllObjects = Bundle(
     relationship_attack_pattern_victim,
     relationship_attacker_victim,
     incident_report,
-    incident_note_objects[0],
+    incident_note_objects_comments[0],
+    incident_note_objects_comments[1],
+    incident_note_objects_comments[2],
+    incident_note_objects_comments[3],
     allow_custom=True
 )
 
