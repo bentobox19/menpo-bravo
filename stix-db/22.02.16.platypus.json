@@ -1,11 +1,11 @@
 {
     "type": "bundle",
-    "id": "bundle--9445e8e3-8ef9-4820-b4a7-d26327d6a3fc",
+    "id": "bundle--be78713b-cc6c-4f7f-91c4-7805553d4f34",
     "objects": [
         {
             "type": "threat-actor",
             "spec_version": "2.1",
-            "id": "threat-actor--4fb0fa75-7d03-43d2-ac63-0704619cfff2",
+            "id": "threat-actor--f5ed911d-6e86-4351-891f-b91099c2a22d",
             "created": "2023-04-19T00:00:00.000Z",
             "modified": "2023-04-19T00:00:00.000Z",
             "name": "Platypus Attacker",
@@ -14,7 +14,7 @@
         {
             "type": "indicator",
             "spec_version": "2.1",
-            "id": "indicator--325f4d0e-c077-4dc9-844c-8d17b762c8d7",
+            "id": "indicator--48d35f1c-c5f4-41ee-8340-e2ebe823148a",
             "created": "2023-04-19T00:00:00.000Z",
             "modified": "2023-04-19T00:00:00.000Z",
             "name": "0xeff003d64046a6f521ba31f39405cb720e953958",
@@ -27,7 +27,7 @@
         {
             "type": "indicator",
             "spec_version": "2.1",
-            "id": "indicator--200ff3ac-deec-46b2-9e15-652c2f1aa00f",
+            "id": "indicator--42700b70-a693-4983-8cf0-e4eaec43b592",
             "created": "2023-04-19T00:00:00.000Z",
             "modified": "2023-04-19T00:00:00.000Z",
             "name": "0x1266a937c2ccd970e5d7929021eed3ec593a95c68a99b4920c2efa226679b430",
@@ -40,7 +40,7 @@
         {
             "type": "indicator",
             "spec_version": "2.1",
-            "id": "indicator--afb97efa-7f12-4c49-af29-a5eee7919c0e",
+            "id": "indicator--9c1230d1-7c7f-463a-b66a-00223dd6c337",
             "created": "2023-04-19T00:00:00.000Z",
             "modified": "2023-04-19T00:00:00.000Z",
             "name": "0xeff003d64046a6f521ba31f39405cb720e953958",
@@ -53,37 +53,37 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--394abd3c-37ff-435d-b88b-a10fabf6e66f",
+            "id": "relationship--0508699e-4544-4100-9e88-4e4b0e0a8102",
             "created": "2023-04-19T00:00:00.000Z",
             "modified": "2023-04-19T00:00:00.000Z",
             "relationship_type": "indicates",
-            "source_ref": "indicator--325f4d0e-c077-4dc9-844c-8d17b762c8d7",
-            "target_ref": "threat-actor--4fb0fa75-7d03-43d2-ac63-0704619cfff2"
+            "source_ref": "indicator--48d35f1c-c5f4-41ee-8340-e2ebe823148a",
+            "target_ref": "threat-actor--f5ed911d-6e86-4351-891f-b91099c2a22d"
         },
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--d070cfe1-b268-48f1-b04c-e037cb46e777",
+            "id": "relationship--79a7345c-c3ae-4af1-a2c4-9ebcaef3eb34",
             "created": "2023-04-19T00:00:00.000Z",
             "modified": "2023-04-19T00:00:00.000Z",
             "relationship_type": "indicates",
-            "source_ref": "indicator--200ff3ac-deec-46b2-9e15-652c2f1aa00f",
-            "target_ref": "threat-actor--4fb0fa75-7d03-43d2-ac63-0704619cfff2"
+            "source_ref": "indicator--42700b70-a693-4983-8cf0-e4eaec43b592",
+            "target_ref": "threat-actor--f5ed911d-6e86-4351-891f-b91099c2a22d"
         },
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--3c4dff11-23a0-49d5-8686-115064659813",
+            "id": "relationship--fd9b811c-7619-408d-8e1c-8aaea53dfe9d",
             "created": "2023-04-19T00:00:00.000Z",
             "modified": "2023-04-19T00:00:00.000Z",
             "relationship_type": "indicates",
-            "source_ref": "indicator--afb97efa-7f12-4c49-af29-a5eee7919c0e",
-            "target_ref": "threat-actor--4fb0fa75-7d03-43d2-ac63-0704619cfff2"
+            "source_ref": "indicator--9c1230d1-7c7f-463a-b66a-00223dd6c337",
+            "target_ref": "threat-actor--f5ed911d-6e86-4351-891f-b91099c2a22d"
         },
         {
             "type": "attack-pattern",
             "spec_version": "2.1",
-            "id": "attack-pattern--d71cbcd0-08e3-4a6f-a910-c76e1824ac34",
+            "id": "attack-pattern--698a84e8-e2c1-470a-99f0-5633f7c805af",
             "created": "2023-04-19T00:00:00.000Z",
             "modified": "2023-04-19T00:00:00.000Z",
             "name": "Logic error vulnerability",
@@ -92,24 +92,24 @@
                     "extension_type": "toplevel-property-extension"
                 }
             },
-            "x_defi_taxonomy_incident_cause": "Coding mistake",
+            "x_defi_taxonomy_layer": "SC",
             "x_defi_taxonomy_incident_type": "Absence of coding logic or sanity check",
-            "x_defi_taxonomy_layer": "SC"
+            "x_defi_taxonomy_incident_cause": "Coding mistake"
         },
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--33d12374-7d39-4089-aa05-c101ddb31a21",
+            "id": "relationship--74481d70-cde6-4e2f-bffc-877cd1303629",
             "created": "2023-04-19T00:00:00.000Z",
             "modified": "2023-04-19T00:00:00.000Z",
             "relationship_type": "uses",
-            "source_ref": "threat-actor--4fb0fa75-7d03-43d2-ac63-0704619cfff2",
-            "target_ref": "attack-pattern--d71cbcd0-08e3-4a6f-a910-c76e1824ac34"
+            "source_ref": "threat-actor--f5ed911d-6e86-4351-891f-b91099c2a22d",
+            "target_ref": "attack-pattern--698a84e8-e2c1-470a-99f0-5633f7c805af"
         },
         {
             "type": "identity",
             "spec_version": "2.1",
-            "id": "identity--9f106888-d50e-4d01-b561-9bbb9389fe7d",
+            "id": "identity--9d6ac851-1302-44df-89ba-9a3f0c5f6499",
             "created": "2023-04-19T00:00:00.000Z",
             "modified": "2023-04-19T00:00:00.000Z",
             "name": "Platypus",
@@ -128,27 +128,27 @@
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--dbd5f071-c18d-45ad-af59-399ec2136573",
+            "id": "relationship--ec197549-e407-4e44-b790-741881ec48c7",
             "created": "2023-04-19T00:00:00.000Z",
             "modified": "2023-04-19T00:00:00.000Z",
             "relationship_type": "targets",
-            "source_ref": "threat-actor--4fb0fa75-7d03-43d2-ac63-0704619cfff2",
-            "target_ref": "identity--9f106888-d50e-4d01-b561-9bbb9389fe7d"
+            "source_ref": "threat-actor--f5ed911d-6e86-4351-891f-b91099c2a22d",
+            "target_ref": "identity--9d6ac851-1302-44df-89ba-9a3f0c5f6499"
         },
         {
             "type": "relationship",
             "spec_version": "2.1",
-            "id": "relationship--94af97be-546f-4f63-8751-167eace0ef83",
+            "id": "relationship--28e1cd89-3ac8-4440-bfe5-b3a4d418dbe8",
             "created": "2023-04-19T00:00:00.000Z",
             "modified": "2023-04-19T00:00:00.000Z",
             "relationship_type": "targets",
-            "source_ref": "attack-pattern--d71cbcd0-08e3-4a6f-a910-c76e1824ac34",
-            "target_ref": "identity--9f106888-d50e-4d01-b561-9bbb9389fe7d"
+            "source_ref": "attack-pattern--698a84e8-e2c1-470a-99f0-5633f7c805af",
+            "target_ref": "identity--9d6ac851-1302-44df-89ba-9a3f0c5f6499"
         },
         {
             "type": "report",
             "spec_version": "2.1",
-            "id": "report--ccb322e8-a01b-42c1-8809-cbc9b80065a9",
+            "id": "report--20468cd8-9137-4ecb-9b1e-7e84db6f33d6",
             "created": "2023-04-19T00:00:00.000Z",
             "modified": "2023-04-19T00:00:00.000Z",
             "name": "",
@@ -159,8 +159,8 @@
             ],
             "published": "2023-02-16T00:00:00Z",
             "object_refs": [
-                "threat-actor--4fb0fa75-7d03-43d2-ac63-0704619cfff2",
-                "identity--9f106888-d50e-4d01-b561-9bbb9389fe7d"
+                "threat-actor--f5ed911d-6e86-4351-891f-b91099c2a22d",
+                "identity--9d6ac851-1302-44df-89ba-9a3f0c5f6499"
             ],
             "external_references": [
                 {
@@ -193,12 +193,12 @@
         {
             "type": "note",
             "spec_version": "2.1",
-            "id": "note--92741f86-d789-4fd9-a04a-a3fbdafe2c4a",
+            "id": "note--6219942a-eae9-4f06-a0e5-a949a33b9c69",
             "created": "2023-04-19T00:00:00.000Z",
             "modified": "2023-04-19T00:00:00.000Z",
             "content": "On February 16, 2023 Platypus lost $9m due to a logic error    when handling withdrawals with borrowed assets.    In a series of bizarre twists attacker failed to implement    a withdrawal function in their exploit contract effectively    freezing most of the stolen assets, got hacked by the BlockSec     team which recovered $2.4m USDC, and also got doxxed by     none other than ZachXBT.     Overall a happy end to a very sloppy hack.",
             "object_refs": [
-                "report--ccb322e8-a01b-42c1-8809-cbc9b80065a9"
+                "report--20468cd8-9137-4ecb-9b1e-7e84db6f33d6"
             ]
         }
     ]
