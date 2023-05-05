@@ -4,6 +4,16 @@
 
 DeFi Incidents in STIX 2.1.
 
+## Running the local web app to generate STIX objects
+
+(Work in Progress)
+
+```
+cd webapp
+npm install
+npm start
+```
+
 ## Using Python to generate STIX objects
 
 ### Installing
