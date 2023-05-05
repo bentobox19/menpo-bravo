@@ -1867,11 +1867,28 @@ function makeModule(visjs)
 // https://github.com/oasis-open/cti-stix-visualization/tree/6c9269f86dec96246f0262a1c02e04c99ceb9f73/stix2viz/stix2viz
 
 // Small modifications to make it work with React:
+//  i.e. We don't want this dependency as an AMD module, but ES6.
 
-// We just delete this line at the end
+// We just delete this line at the end of this file below...
 // define(["nbextensions/stix2viz/vis-network"], makeModule);
 
-// and add this line
+// ... and add this other line
 export default makeModule;
 
-// should be easy to maintain if you want to get updated with the repository
+// Then the trick to use visjs in React is by adding
+// `npm install vis-network`
+//
+// and the following code at your React file
+//
+// import { DataSet } from "vis-data";
+// import { Network } from "vis-network";
+// import Stix2viz from "./stix2viz/stix2viz.js";
+//
+//  const visjs = {
+//    DataSet: DataSet,
+//    Network: Network,
+//  }
+//
+//  const stix2viz = Stix2viz(visjs);
+
+// Should be easy to maintain if you want to be updated with the repository!
