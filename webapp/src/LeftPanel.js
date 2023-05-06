@@ -27,7 +27,7 @@ const LeftPanel = () => {
   useEffect(() => {
     const network_1 =
       canvas.current &&
-      stix2viz.makeGraphView(canvas.current, nodeDataSet, edgeDataSet, stixIdToObject, {});
+      stix2viz.makeGraphView(canvas.current, nodeDataSet, edgeDataSet, stixIdToObject, customConfig);
   }, [canvas, nodeDataSet, edgeDataSet, stixIdToObject]);
 
   return (
