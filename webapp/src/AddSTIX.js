@@ -40,15 +40,17 @@ const LeftPanel = () => {
 
   return (
     <div>
-      <div id="canvas-wrapper">
-        <div id="canvas" ref={canvas} />
+      <div id="canvas-input-wrapper">
+        <div id="canvas-wrapper">
+          <div id="canvas" ref={canvas} />
+        </div>
+
+        <div id="input-wrapper">
+          <AddSTIXElement />
+        </div>
       </div>
 
-      <div id="add-stix-element-wrapper">
-        <AddSTIXElement />
-      </div>
-
-      <div id="selected-wrapper">
+      <div id="node-info-wrapper">
         <div id="selected" className="selected">
           <h3>Selected Node</h3>
           <div id="selection"></div>

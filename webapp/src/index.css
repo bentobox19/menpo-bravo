@@ -1,67 +1,89 @@
 body {
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  height: 100vh;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 #top-header-bar
 {
-    background-color: #fafafa;
-    margin-bottom: 10px;
-    padding: 20px;
+  background-color: #fafafa;
+  margin-bottom: 10px;
+  padding: 20px;
 }
 
 #top-header-bar h1
 {
+  display: inline;
   font-size: 36px;
   font-weight: normal;
-  display: inline;
 }
 
 #top-header-bar a
 {
-    float: right;
+  float: right;
+}
+
+/*
+  Canvas + Input Area
+*/
+
+#canvas-input-wrapper {
+  display: flex;
+  flex: 1;
+  overflow: auto;
 }
 
 #canvas-wrapper {
-  margin: 0 10px 0 10px;
   float: left;
+  margin: 0 10px 0 10px;
   width: 60%;
 }
 
 #canvas {
   border: solid 1px black;
-  width: 100%;
   height: 400px;
   overflow: auto;
-}
-
-#selected-wrapper {
-  margin: 0 10px 0 10px;
-  float: left;
   width: 100%;
 }
 
-#selected-wrapper {
+#input-wrapper {
+  background: #eee;
+  height: 400px;
+  margin: 0 10px 0 10px;
+  overflow: auto;
+  padding: 0 10px 0 10px;
+  width: 40%;
+}
+
+/*
+  Node Info Area
+*/
+
+#node-info-wrapper {
   display: flex;
+  flex: 1;
+  float: left;
+  height: 40vh;
+  margin-top: 10px;
+  overflow: auto;
+  width: 100%;
 }
 
 .selected {
-  width: 50%;
-  display: inline-block;
-  vertical-align: top;
-  margin: 10px;
-  padding: 25px;
   background-color: #fafafa;
+  display: inline-block;
+  margin: 0 10px 0 10px;
   overflow: auto;
+  padding: 25px;
+  vertical-align: top;
+  width: 50%;
 }
 
 .selected h2 {
@@ -70,10 +92,10 @@ code {
 }
 
 .selected-object-prop-name {
-    color: purple;
-    margin-right: 0.5em;
+  color: purple;
+  margin-right: 0.5em;
 }
 
 .selected-object-text-value {
-    color: darkblue;
+  color: darkblue;
 }
