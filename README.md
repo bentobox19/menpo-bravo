@@ -8,9 +8,9 @@ DeFi Incidents in STIX 2.1.
 
 (Work in Progress)
 
-```
-cd webapp
-npm install
+```bash
+cd webapp/frontend
+npm install # If first time
 npm start
 ```
 
@@ -22,7 +22,7 @@ npm start
 cd python
 python3 -m venv menpo_env
 source menpo_env/bin/activate
-pip3 install -r requirements.txt
+pip3 install -r requirements.txt # If first time
 ```
 
 ### Creating a bundle
