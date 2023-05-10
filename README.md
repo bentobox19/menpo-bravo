@@ -6,7 +6,21 @@ DeFi Incidents in STIX 2.1.
 
 ## Running the local web app to generate STIX objects
 
+### Backend
+
 (Work in Progress)
+
+```bash
+cd webapp/backend
+python3 -m venv menpo_env
+source menpo_env/bin/activate
+
+pip3 install -r requirements.txt # If first time
+
+#??? # To run the backend
+```
+
+### Frontend
 
 ```bash
 cd webapp/frontend
@@ -19,7 +33,7 @@ npm start
 ### Installing
 
 ```bash
-cd python
+cd scripts
 python3 -m venv menpo_env
 source menpo_env/bin/activate
 pip3 install -r requirements.txt # If first time
@@ -28,14 +42,14 @@ pip3 install -r requirements.txt # If first time
 ### Creating a bundle
 
 ```bash
-cd python
+cd scripts
 python3 <stix2 python script>
 ```
 
 Example
 
 ```bash
-cd python
+cd scripts
 source menpo_env/bin/activate
 
 python3 22.09.01.kyberswap.py
