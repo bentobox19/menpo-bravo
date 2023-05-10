@@ -1,10 +1,12 @@
-import React from 'react';
-
+import React from "react";
 import { useEffect, useRef } from "react";
+
+import Stix2Viz from "./stix2viz/stix2viz.js";
 import { DataSet } from "vis-data";
 import { Network } from "vis-network";
-import Stix2Viz from "./stix2viz/stix2viz.js";
-import { graphViewClickHandler } from './GraphViewClickHandler';
+import { graphViewClickHandler } from "./GraphViewClickHandler";
+
+import AddSTIXElement from "./AddSTIXElement";
 
 const LeftPanel = () => {
   const visjs = {
@@ -41,11 +43,17 @@ const LeftPanel = () => {
       <div id="canvas-wrapper">
         <div id="canvas" ref={canvas} />
       </div>
+
+      <div id="add-stix-element-wrapper">
+        <AddSTIXElement />
+      </div>
+
       <div id="selected-wrapper">
         <div id="selected" className="selected">
           <h3>Selected Node</h3>
           <div id="selection"></div>
         </div>
+
         <div id="connections" className="selected">
           <h3>Linked Nodes</h3>
           <h4>Incoming Edges:</h4>

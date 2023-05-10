@@ -9,7 +9,7 @@ function RightPanel() {
 
   return (
     <div>
-      <h3>Right Panel</h3>
+      <h3>Add STIX Element</h3>
       <button onClick={addForm}>Add</button>
       {forms.map((form) => (
         <StixIndicatorForm key={form.id} />
