@@ -10,7 +10,7 @@ function RightPanel() {
   };
 
   return (
-    <div style={{ flex: 1, padding: '10px' }}>
+    <div>
       <h3>Right Panel</h3>
       <button onClick={addForm}>Add</button>
       {forms.map((form) => (

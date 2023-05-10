@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 import { DataSet } from "vis-data";
 import { Network } from "vis-network";
 import Stix2Viz from "./stix2viz/stix2viz.js";
-import { graphViewClickHandler } from './LeftPanelViewClickHandler';
+import { graphViewClickHandler } from './GraphViewClickHandler';
 
 const LeftPanel = () => {
   const visjs = {
@@ -39,23 +39,23 @@ const LeftPanel = () => {
   }, [canvas, nodeDataSet, edgeDataSet, stixIdToObject]);
 
   return (
-    <div style={{ flex: 1, borderRight: '1px solid black', padding: '10px' }}>
-      <h3>Visualization</h3>
-      <div ref={canvas} style={{ height: '500px', width: '800px' }} />
-
-      <div id="selected">
-        <h3>Selected Node</h3>
-        <div id="selection"></div>
+    <div>
+      <div id="canvas-wrapper">
+        <div id="canvas" ref={canvas} />
       </div>
-
-      <div id="connections">
-        <h3>Linked Nodes</h3>
-        <h4>Incoming Edges:</h4>
-        <div id="connections-incoming"></div>
-        <h4>Outgoing Edges:</h4>
-        <div id="connections-outgoing"></div>
+      <div id="selected-wrapper">
+        <div id="selected" className="selected">
+          <h3>Selected Node</h3>
+          <div id="selection"></div>
+        </div>
+        <div id="connections" className="selected">
+          <h3>Linked Nodes</h3>
+          <h4>Incoming Edges:</h4>
+          <div id="connections-incoming"></div>
+          <h4>Outgoing Edges:</h4>
+          <div id="connections-outgoing"></div>
+        </div>
       </div>
-
     </div>
   );
 }
