@@ -8,8 +8,6 @@ DeFi Incidents in STIX 2.1.
 
 ### Backend
 
-(Work in Progress)
-
 ```bash
 cd webapp/backend
 python3 -m venv menpo_env
